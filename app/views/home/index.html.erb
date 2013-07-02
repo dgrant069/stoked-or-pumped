@@ -1,3 +1,42 @@
-<h1>Home#index</h1>
-<%= link_to "Posts", posts_path %>
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <link href="styles/styles.css" media="screen" rel="stylesheet" type="text/css" />
+<!--<link href="C:\Users\dylang\Pictures\Stoked or pumped\style.css" media="screen" rel="stylesheet" type="text/css" /> --><script src="js/script.js" type="text/javascript"></script>  <title>Stoked or Pumped</title>
+ </head>
+ <body id="body">
+  <div id="wrapper">
+   	<img id="banner" src="https://lh6.googleusercontent.com/-u57peTWUiUY/UTkQ3or0EHI/AAAAAAAAAXA/H_nkYScmiFM/s987/Richard-Sherman-Seahawks-Wallpaper-nfl-1300x349.jpg" /></div>
+  	<div class="navbar">
+   		<%= link_to "All Posts", posts_path %>
+  	</div>
+  	<div class="backdrop">
+  		<h2>Recent Posts</h2>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Title</th>
+          <th>Mediaurl</th>
+          <th>Datestamp</th>
+          <th>Content</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
 
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= post.name %></td>
+          <td><%= post.title %></td>
+          <td><%= post.mediaurl %></td>
+          <td><%= post.datestamp %></td>
+          <td><%= post.content %></td>
+          <td><%= link_to 'Show', post %></td>
+        </tr>    
+      <% end %>
+
+    </div>
+  </div>
+ </body>
+</html>

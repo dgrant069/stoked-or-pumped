@@ -1,8 +1,13 @@
-  <p>
+
+<p>
     <b>User:</b>
     <%= comment.commentor %>
   </p>
   <p>
     <b>Comment:</b>
     <%= comment.body %>
-  </p>
+</p>
+<p> <%= link_to "Delete Comment", [comment.post, comment],
+ 			method: :delete,
+ 			data: { confirm: "Confirm Delete" } %>
+</p>
