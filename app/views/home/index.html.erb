@@ -14,24 +14,11 @@
   	<div class="backdrop">
   		<h2>Recent Posts</h2>
       <table>
-        <tr>
-          <th>Name</th>
-          <th>Title</th>
-          <th>Mediaurl</th>
-          <th>Datestamp</th>
-          <th>Content</th>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
-
       <% @posts.each do |post| %>
         <tr>
+          <td><%= image_tag post.mediaurl %></td>
           <td><%= post.name %></td>
           <td><%= post.title %></td>
-          <td><%= post.mediaurl %></td>
-          <td><%= post.datestamp %></td>
-          <td><%= post.content %></td>
           <td><%= link_to 'Show', post %></td>
         </tr>    
       <% end %>
